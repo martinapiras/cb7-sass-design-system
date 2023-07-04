@@ -1,0 +1,13 @@
+// typography
+%heading {
+  font-family: $font-secondary;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+%center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

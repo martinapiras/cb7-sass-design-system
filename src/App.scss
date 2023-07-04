@@ -1,32 +1,30 @@
+body {
+  background-color: $color-primary-50;
+}
+
 #root {
   font-size: $base-size;
-  background-color: $color-primary-50;
   color: $color-primary-900;
-  height: 100vh;
-  @include flexbox-vrt();
-  gap: 24px;
+  @include flexbox-hrz(24px);
+  flex-wrap: wrap;
 }
 
 button {
   width: rem(146px);
   height: rem(44px);
   border-radius: $border-radius-2;
-  @include flexbox-hrz();
+  @include flexbox-hrz(rem(8px));
   padding: $padding-button;
-  gap: rem(8px);
   cursor: pointer;
 }
 
 .container {
-  @include flexbox-hrz;
-  gap: 50px;
+  width: column(12);
+  @include flexbox-hrz(50px);
+
   p {
-    width: 33.33%;
     padding: $padding-paragraphs;
     text-align: center;
-    @include xs {
-      width: 100%;
-    }
   }
 
   @include xs {
@@ -34,18 +32,88 @@ button {
   }
 }
 
-.success {
-  @include button($color-success-50, $color-success-900, $color-success-500);
+.buttons-row {
+  @include flexbox-hrz(50px);
+
+  .success {
+    @include button($color-success-50, $color-success-900, $color-success-500);
+  }
+
+  .error {
+    @include button($color-error-50, $color-error-900, $color-error-500);
+  }
+
+  .secondary {
+    @include button(
+      $color-secondary-50,
+      $color-secondary-900,
+      $color-secondary-500
+    );
+  }
+
+  .elevation {
+    @include button($color-primary-50, $color-primary-900, $color-primary-500);
+    transition: all 0.35s;
+
+    &:hover {
+      box-shadow: $elevation-large;
+      transform: scale(1.1);
+    }
+  }
 }
 
-.error {
-  @include button($color-error-50, $color-error-900, $color-error-500);
+.row {
+  width: 100%;
+  @include flexbox;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > * {
+    border: 1px solid red;
+  }
+
+  .col-3 {
+    background-color: $color-neutral-500;
+    height: 500px;
+    @extend %center-content;
+  }
+
+  .col-4 {
+    background-color: $color-primary-500;
+    color: $color-neutral-50;
+  }
+
+  .col-8 {
+    @include flexbox-hrz(20px);
+
+    .col-2 {
+      background-color: $color-primary-500;
+      color: $color-primary-50;
+    }
+
+    @include xs {
+      flex-wrap: wrap;
+    }
+  }
+
+  .keanu {
+    height: 250px;
+    @extend %center-content;
+    background-color: $color-secondary-500;
+  }
+
+  @include xs {
+    flex-wrap: wrap;
+  }
 }
 
-.secondary {
-  @include button(
-    $color-secondary-50,
-    $color-secondary-900,
-    $color-secondary-500
-  );
+.row-g {
+  width: 100%;
+  @include flexbox;
+  justify-content: space-between;
+
+  > * {
+    border: 1px solid green;
+    @extend %center-content;
+  }
 }
