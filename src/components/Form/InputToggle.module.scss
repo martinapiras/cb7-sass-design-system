@@ -1,0 +1,35 @@
+.InputToggle {
+  width: rem(50px);
+  height: rem(24px);
+  background-color: $color-neutral-500;
+  position: relative;
+  border-radius: $border-radius-4;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+
+  &.active {
+    background-color: $color-neutral-900;
+  }
+
+  .input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  .toggle {
+    width: rem(18px);
+    height: rem(18px);
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    left: rem(5px);
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: transform 0.25s ease-in-out;
+
+    &.toggled {
+      transform: translate(23px, -50%);
+    }
+  }
+}
