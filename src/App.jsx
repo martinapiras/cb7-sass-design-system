@@ -1,6 +1,7 @@
 import "./App.scss";
 import Button from "./components/Button";
 import InputToggle from "./components/Form/InputToggle";
+import Badge from "./components/Badge";
 
 function App() {
   return (
@@ -33,6 +34,17 @@ function App() {
       <div className="container">
         <InputToggle toggled={false} />
         <InputToggle toggled={true} />
+      </div>
+      <div className="container">
+        <Badge label="Large" size="lg" outline />
+        <Badge label="Large" size="lg" icon iconLeft />
+        <Badge label="Medium" outline />
+        <Badge label="Medium" icon />
+        <Badge label="Small" size="sm" outline />
+        <Badge label="Small" size="sm" icon iconLeft />
+        <Badge label="L" circle size="lg" />
+        <Badge label="M" circle outline />
+        <Badge label="S" circle size="sm" />
       </div>
     </>
   );
