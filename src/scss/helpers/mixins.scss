@@ -23,3 +23,14 @@
   background-color: $color-bg;
   border: 1px solid $color-border;
 }
+
+@mixin buttonTheme($theme) {
+  @if ($theme == "outline") {
+    background-color: $color-neutral-50;
+    color: $color-neutral-900;
+    border: 1px solid $color-neutral-900;
+  } @else {
+    background-color: $color-neutral-900;
+    color: $color-neutral-50;
+  }
+}

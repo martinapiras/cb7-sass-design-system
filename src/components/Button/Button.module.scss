@@ -1,0 +1,54 @@
+.Button {
+  @include flexbox-hrz(8px);
+  border: none;
+  color: $color-primary-50;
+  background-color: $color-primary-900;
+  font-family: $font-secondary;
+  transition: background 0.35s ease-in-out;
+
+  &.fill {
+    @include buttonTheme("fill");
+
+    &:hover {
+      @include buttonTheme("outline");
+    }
+  }
+
+  &.iconLeft {
+    flex-direction: row-reverse;
+  }
+
+  &.outline {
+    @include buttonTheme("outline");
+
+    &:hover {
+      @include buttonTheme("fill");
+    }
+  }
+
+  &.md {
+    width: 147px;
+    height: 52px;
+    padding: 10px 26px;
+  }
+
+  &.xl {
+    width: 230px;
+    height: 76px;
+    padding: 19px 55px;
+    font-size: rem(20px);
+  }
+
+  &.lg {
+    width: 148px;
+    height: 72px;
+    font-size: rem(18px);
+  }
+
+  &.square {
+    width: 52px;
+    height: 52px;
+    border-radius: 100%;
+    padding: 0;
+  }
+}

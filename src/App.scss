@@ -9,6 +9,11 @@ body {
   flex-wrap: wrap;
 }
 
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
 button {
   width: rem(146px);
   height: rem(44px);
@@ -21,6 +26,7 @@ button {
 .container {
   width: column(12);
   @include flexbox-hrz(50px);
+  padding: $padding-paragraphs;
 
   p {
     padding: $padding-paragraphs;
@@ -34,6 +40,8 @@ button {
 
 .buttons-row {
   @include flexbox-hrz(50px);
+  padding: $padding-paragraphs;
+  flex-wrap: wrap;
 
   .success {
     @include button($color-success-50, $color-success-900, $color-success-500);
@@ -89,10 +97,6 @@ button {
     .col-2 {
       background-color: $color-primary-500;
       color: $color-primary-50;
-    }
-
-    @include xs {
-      flex-wrap: wrap;
     }
   }
 
