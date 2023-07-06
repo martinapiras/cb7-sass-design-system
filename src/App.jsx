@@ -1,28 +1,63 @@
+import { useState } from "react";
 import "./App.scss";
 import Button from "./components/Button";
 import InputToggle from "./components/Form/InputToggle";
 import Badge from "./components/Badge";
+import InputText from "./components/Form/InputText";
+import InputPassword from "./components/Form/InputPassword";
+import InputSelect from "./components/Form/InputSelect";
+import Dropdown from "./components/Form/Dropdown";
+import { options } from "./mocks/options.js";
 
 function App() {
+  const [inputTextValue, setInputTextValue] = useState("");
+  const [inputPasswordValue, setInputPasswordValue] = useState("");
+  const [inputSelectValue, setInputSelectValue] = useState("");
+
   return (
     <>
-      {/* <h1 className="heading-1">Title</h1> */}
-      {/* <div className="container">
-        <div className="row-g">
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-          <div className="col-g-1">Col 1</div>
-        </div>
-      </div> */}
+      <div className="container">
+        <InputText
+          id={"name"}
+          name="name"
+          placeholder="Your name"
+          label={"Name"}
+          // error
+          errorMessage={"Inserisci il tuo nome"}
+          handleChange={setInputTextValue}
+          // line
+        />
+        <InputPassword
+          id={"password"}
+          name="password"
+          placeholder="Your password"
+          label={"Password"}
+          // error
+          errorMessage={"Inserisci la tua password"}
+          handleChange={setInputPasswordValue}
+          line
+        />
+        <InputText
+          id={"name"}
+          name="name"
+          placeholder="Your name"
+          label={"Name"}
+          error
+          errorMessage={"Inserisci il tuo nome"}
+          handleChange={setInputTextValue}
+        />
+        <InputSelect
+          options={options}
+          defaultValue={options?.options[1]?.value}
+          handleChange={setInputSelectValue}
+        />
+        <Dropdown options={options} />
+      </div>
+      <div className="container">
+        <hr />
+        <hr />
+        <hr />
+      </div>
       <div className="buttons-row">
         <Button label="Click me" icon size="xl" />
         <Button label="Click me" icon size="lg" outline />
