@@ -1,0 +1,30 @@
+.selectContainer {
+  position: relative;
+  width: 100%;
+
+  .select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: $padding-input;
+    border: 1px solid $color-neutral-500;
+    border-radius: $border-radius-1;
+    background-color: $color-neutral-50;
+    color: $color-neutral-900;
+
+    &:focus {
+      border: 1px solid $color-neutral-500;
+      box-shadow: $elevation-medium;
+    }
+  }
+
+  .icon {
+    height: 100%;
+    @extend %center-content;
+    position: absolute;
+    right: 20px;
+    top: -50%;
+    transform: translateY(50%);
+  }
+}

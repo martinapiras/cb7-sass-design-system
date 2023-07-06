@@ -1,0 +1,47 @@
+.dropdownContainer {
+  width: 100%;
+  position: relative;
+  background-color: $color-neutral-50;
+  color: $color-neutral-900;
+  padding: $padding-input;
+  border-radius: $border-radius-1;
+  border: 1px solid $color-neutral-500;
+
+  .dropdown {
+    .list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      list-style-type: none;
+      padding-left: 0;
+      background-color: $color-neutral-900;
+      color: $color-neutral-50;
+
+      .listOption {
+        width: 100%;
+        padding: $padding-input;
+        border-bottom: 1px solid $color-neutral-50;
+        transition: background-color 0.35s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color-neutral-500;
+        }
+      }
+
+      .listOption:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .icon {
+    height: 100%;
+    @extend %center-content;
+    position: absolute;
+    right: 20px;
+    top: -50%;
+    transform: translateY(50%);
+  }
+}
