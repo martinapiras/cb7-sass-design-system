@@ -8,6 +8,9 @@ import InputPassword from "./components/Form/InputPassword";
 import InputSelect from "./components/Form/InputSelect";
 import Dropdown from "./components/Form/Dropdown";
 import { options } from "./mocks/options.js";
+import InputCheckbox from "./components/Form/InputCheckbox";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App() {
   const [inputTextValue, setInputTextValue] = useState("");
@@ -16,6 +19,17 @@ function App() {
 
   return (
     <>
+      <Header />
+      <Hero />
+      <div className="container">
+        <InputCheckbox checked />
+        <InputCheckbox />
+      </div>
+      <div className="container">
+        <hr />
+        <hr />
+        <hr />
+      </div>
       <div className="container">
         <InputText
           id={"name"}
@@ -57,29 +71,6 @@ function App() {
         <hr />
         <hr />
         <hr />
-      </div>
-      <div className="buttons-row">
-        <Button label="Click me" icon size="xl" />
-        <Button label="Click me" icon size="lg" outline />
-        <Button label="Click me" icon />
-        <Button label="Click me" icon iconLeft outline />
-        <Button icon square />
-        <Button icon square outline />
-      </div>
-      <div className="container">
-        <InputToggle toggled={false} />
-        <InputToggle toggled={true} />
-      </div>
-      <div className="container">
-        <Badge label="Large" size="lg" outline />
-        <Badge label="Large" size="lg" icon iconLeft />
-        <Badge label="Medium" outline />
-        <Badge label="Medium" icon />
-        <Badge label="Small" size="sm" outline />
-        <Badge label="Small" size="sm" icon iconLeft />
-        <Badge label="L" circle size="lg" />
-        <Badge label="M" circle outline />
-        <Badge label="S" circle size="sm" />
       </div>
     </>
   );

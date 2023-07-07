@@ -1,0 +1,35 @@
+.InputCheckbox {
+  background-color: $color-neutral-50;
+  border: 1px solid $color-neutral-900;
+  color: $color-neutral-900;
+  border-radius: 100%;
+  @extend %center-content;
+  width: 24px;
+  height: 24px;
+  position: relative;
+
+  .input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .checked {
+    width: 50%;
+    height: 50%;
+    @extend %center-content;
+  }
+
+  //   .checked {
+  //     width: 50%;
+  //     height: 50%;
+  //     @extend %center-content;
+  //     opacity: 0;
+  //     transition: opacity 0.35s ease;
+
+  //     &.active {
+  //       opacity: 1;
+  //     }
+  //   }
+}
